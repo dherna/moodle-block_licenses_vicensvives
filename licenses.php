@@ -185,7 +185,8 @@ $table->pagesize(50, count($filtered_books));
 $table->setup();
 
 // Ordenación
-collatorlib::asort_objects_by_property($filtered_books, 'fullname');
+//collatorlib::asort_objects_by_property($filtered_books, 'fullname');
+core_collator::asort_objects_by_property($filtered_books, 'fullname');
 
 // Paginación
 $books = array_slice($filtered_books, $table->get_page_start(), $table->get_page_size());
